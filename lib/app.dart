@@ -1,3 +1,4 @@
+import 'core/configurations/app_routes.dart';
 import 'root.dart';
 
 class MyApp extends StatelessWidget {
@@ -12,7 +13,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      onGenerateRoute: AppRoutes.onGenerateRoute,
+      onUnknownRoute: AppRoutes.onUnknownRoute,
     );
   }
 }

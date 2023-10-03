@@ -1,13 +1,13 @@
-import '../../home.dart';
+import '../../update.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class UpdateScreen extends StatefulWidget {
+  const UpdateScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<UpdateScreen> createState() => _UpdateScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _UpdateScreenState extends State<UpdateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text(StringValues.appTitle),
       ),
       body: const Center(
-        child: Text(StringValues.helloWorld),
+        child: Text(StringValues.updateScreen),
       ),
     );
   }

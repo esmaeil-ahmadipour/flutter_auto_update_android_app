@@ -1,13 +1,13 @@
-import '../../home.dart';
+import '../../splash.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text(StringValues.appTitle),
       ),
       body: const Center(
-        child: Text(StringValues.helloWorld),
+        child: Text(StringValues.splashScreen),
       ),
     );
   }
