@@ -20,4 +20,11 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
     );
   }
+
+  @override
+  void initState() {
+    super.initState();
+    context.pushReplacementNamed(
+        destinationRoute: RoutesValues.home, delayAsSecond: 3);
+  }
 }
