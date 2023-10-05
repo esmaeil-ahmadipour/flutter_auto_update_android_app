@@ -25,6 +25,6 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     context.pushReplacementNamed(
-        destinationRoute: RoutesValues.home, delayAsSecond: 3);
+        destinationRoute: RoutesValues.update, delayAsSecond: 3);
   }
 }
