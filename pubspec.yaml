@@ -37,10 +37,18 @@ dependencies:
   cupertino_icons: ^1.0.2
   permission_handler: ^11.0.1
   flutter_bloc: ^8.1.3
+  bloc: ^8.1.2
+  equatable:
+  freezed: ^2.3.4
+  freezed_annotation: ^2.2.0
+  json_annotation: ^4.8.1
+  dio: ^5.2.0+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner:
+  json_serializable: ^6.5.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
