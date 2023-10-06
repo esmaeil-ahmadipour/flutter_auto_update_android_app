@@ -1,1 +1,1 @@
-enum PermissionState { deny, permanentlyDenied, accepted, unknown }
+enum PermissionState { deny, permanentlyDenied, accepted, requested , initial }

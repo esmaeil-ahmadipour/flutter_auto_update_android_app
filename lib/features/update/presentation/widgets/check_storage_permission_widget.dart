@@ -16,6 +16,7 @@ class _CheckStoragePermissionWidgetState
   void initState() {
     super.initState();
     cubit = CheckPermissionCubit();
+    _checkPermission();
   }
 
   @override
@@ -32,7 +33,8 @@ class _CheckStoragePermissionWidgetState
         return switch (state) {
           PermissionState.accepted =>
             const Text(StringValues.permissionAccepted),
-          PermissionState.unknown => Column(
+          PermissionState.initial => const SizedBox(),
+          PermissionState.requested => Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -91,5 +93,18 @@ class _CheckStoragePermissionWidgetState
 
   Future<void> _openAppSettings() async {
     await openAppSettings();
+  }
+
+  Future<void> _checkPermission() async {
+    Future.delayed(Duration.zero, () async {
+      PermissionStatus permissionStatus = await PermissionHandlerPlatform
+          .instance
+          .checkPermissionStatus(Permission.storage);
+      if (permissionStatus.isGranted) {
+        cubit.changeState(state: PermissionState.accepted);
+      } else {
+        cubit.changeState(state: PermissionState.requested);
+      }
+    });
   }
 }
