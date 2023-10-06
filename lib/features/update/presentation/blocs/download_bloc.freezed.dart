@@ -18,21 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$DownloadEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String url, String savePath) downloadFile,
+    required TResult Function(String url) downloadFile,
     required TResult Function() cancelDownload,
     required TResult Function() resetBloc,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String url, String savePath)? downloadFile,
+    TResult? Function(String url)? downloadFile,
     TResult? Function()? cancelDownload,
     TResult? Function()? resetBloc,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String url, String savePath)? downloadFile,
+    TResult Function(String url)? downloadFile,
     TResult Function()? cancelDownload,
     TResult Function()? resetBloc,
     required TResult orElse(),
@@ -81,36 +81,31 @@ class _$DownloadEventCopyWithImpl<$Res, $Val extends DownloadEvent>
 }
 
 /// @nodoc
-abstract class _$$_DownloadFileCopyWith<$Res> {
-  factory _$$_DownloadFileCopyWith(
-          _$_DownloadFile value, $Res Function(_$_DownloadFile) then) =
-      __$$_DownloadFileCopyWithImpl<$Res>;
+abstract class _$$DownloadFileImplCopyWith<$Res> {
+  factory _$$DownloadFileImplCopyWith(
+          _$DownloadFileImpl value, $Res Function(_$DownloadFileImpl) then) =
+      __$$DownloadFileImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String url, String savePath});
+  $Res call({String url});
 }
 
 /// @nodoc
-class __$$_DownloadFileCopyWithImpl<$Res>
-    extends _$DownloadEventCopyWithImpl<$Res, _$_DownloadFile>
-    implements _$$_DownloadFileCopyWith<$Res> {
-  __$$_DownloadFileCopyWithImpl(
-      _$_DownloadFile _value, $Res Function(_$_DownloadFile) _then)
+class __$$DownloadFileImplCopyWithImpl<$Res>
+    extends _$DownloadEventCopyWithImpl<$Res, _$DownloadFileImpl>
+    implements _$$DownloadFileImplCopyWith<$Res> {
+  __$$DownloadFileImplCopyWithImpl(
+      _$DownloadFileImpl _value, $Res Function(_$DownloadFileImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? url = null,
-    Object? savePath = null,
   }) {
-    return _then(_$_DownloadFile(
+    return _then(_$DownloadFileImpl(
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      savePath: null == savePath
-          ? _value.savePath
-          : savePath // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -118,68 +113,72 @@ class __$$_DownloadFileCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DownloadFile implements _DownloadFile {
-  const _$_DownloadFile({required this.url, required this.savePath});
+class _$DownloadFileImpl with DiagnosticableTreeMixin implements _DownloadFile {
+  const _$DownloadFileImpl({required this.url});
 
   @override
   final String url;
-  @override
-  final String savePath;
 
   @override
-  String toString() {
-    return 'DownloadEvent.downloadFile(url: $url, savePath: $savePath)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'DownloadEvent.downloadFile(url: $url)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'DownloadEvent.downloadFile'))
+      ..add(DiagnosticsProperty('url', url));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DownloadFile &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.savePath, savePath) ||
-                other.savePath == savePath));
+            other is _$DownloadFileImpl &&
+            (identical(other.url, url) || other.url == url));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, url, savePath);
+  int get hashCode => Object.hash(runtimeType, url);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DownloadFileCopyWith<_$_DownloadFile> get copyWith =>
-      __$$_DownloadFileCopyWithImpl<_$_DownloadFile>(this, _$identity);
+  _$$DownloadFileImplCopyWith<_$DownloadFileImpl> get copyWith =>
+      __$$DownloadFileImplCopyWithImpl<_$DownloadFileImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String url, String savePath) downloadFile,
+    required TResult Function(String url) downloadFile,
     required TResult Function() cancelDownload,
     required TResult Function() resetBloc,
   }) {
-    return downloadFile(url, savePath);
+    return downloadFile(url);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String url, String savePath)? downloadFile,
+    TResult? Function(String url)? downloadFile,
     TResult? Function()? cancelDownload,
     TResult? Function()? resetBloc,
   }) {
-    return downloadFile?.call(url, savePath);
+    return downloadFile?.call(url);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String url, String savePath)? downloadFile,
+    TResult Function(String url)? downloadFile,
     TResult Function()? cancelDownload,
     TResult Function()? resetBloc,
     required TResult orElse(),
   }) {
     if (downloadFile != null) {
-      return downloadFile(url, savePath);
+      return downloadFile(url);
     }
     return orElse();
   }
@@ -220,47 +219,52 @@ class _$_DownloadFile implements _DownloadFile {
 }
 
 abstract class _DownloadFile implements DownloadEvent {
-  const factory _DownloadFile(
-      {required final String url,
-      required final String savePath}) = _$_DownloadFile;
+  const factory _DownloadFile({required final String url}) = _$DownloadFileImpl;
 
   String get url;
-  String get savePath;
   @JsonKey(ignore: true)
-  _$$_DownloadFileCopyWith<_$_DownloadFile> get copyWith =>
+  _$$DownloadFileImplCopyWith<_$DownloadFileImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_CancelDownloadCopyWith<$Res> {
-  factory _$$_CancelDownloadCopyWith(
-          _$_CancelDownload value, $Res Function(_$_CancelDownload) then) =
-      __$$_CancelDownloadCopyWithImpl<$Res>;
+abstract class _$$CancelDownloadImplCopyWith<$Res> {
+  factory _$$CancelDownloadImplCopyWith(_$CancelDownloadImpl value,
+          $Res Function(_$CancelDownloadImpl) then) =
+      __$$CancelDownloadImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_CancelDownloadCopyWithImpl<$Res>
-    extends _$DownloadEventCopyWithImpl<$Res, _$_CancelDownload>
-    implements _$$_CancelDownloadCopyWith<$Res> {
-  __$$_CancelDownloadCopyWithImpl(
-      _$_CancelDownload _value, $Res Function(_$_CancelDownload) _then)
+class __$$CancelDownloadImplCopyWithImpl<$Res>
+    extends _$DownloadEventCopyWithImpl<$Res, _$CancelDownloadImpl>
+    implements _$$CancelDownloadImplCopyWith<$Res> {
+  __$$CancelDownloadImplCopyWithImpl(
+      _$CancelDownloadImpl _value, $Res Function(_$CancelDownloadImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_CancelDownload implements _CancelDownload {
-  const _$_CancelDownload();
+class _$CancelDownloadImpl
+    with DiagnosticableTreeMixin
+    implements _CancelDownload {
+  const _$CancelDownloadImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'DownloadEvent.cancelDownload()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'DownloadEvent.cancelDownload'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_CancelDownload);
+        (other.runtimeType == runtimeType && other is _$CancelDownloadImpl);
   }
 
   @override
@@ -269,7 +273,7 @@ class _$_CancelDownload implements _CancelDownload {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String url, String savePath) downloadFile,
+    required TResult Function(String url) downloadFile,
     required TResult Function() cancelDownload,
     required TResult Function() resetBloc,
   }) {
@@ -279,7 +283,7 @@ class _$_CancelDownload implements _CancelDownload {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String url, String savePath)? downloadFile,
+    TResult? Function(String url)? downloadFile,
     TResult? Function()? cancelDownload,
     TResult? Function()? resetBloc,
   }) {
@@ -289,7 +293,7 @@ class _$_CancelDownload implements _CancelDownload {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String url, String savePath)? downloadFile,
+    TResult Function(String url)? downloadFile,
     TResult Function()? cancelDownload,
     TResult Function()? resetBloc,
     required TResult orElse(),
@@ -336,39 +340,45 @@ class _$_CancelDownload implements _CancelDownload {
 }
 
 abstract class _CancelDownload implements DownloadEvent {
-  const factory _CancelDownload() = _$_CancelDownload;
+  const factory _CancelDownload() = _$CancelDownloadImpl;
 }
 
 /// @nodoc
-abstract class _$$_ResetBlocCopyWith<$Res> {
-  factory _$$_ResetBlocCopyWith(
-          _$_ResetBloc value, $Res Function(_$_ResetBloc) then) =
-      __$$_ResetBlocCopyWithImpl<$Res>;
+abstract class _$$ResetBlocImplCopyWith<$Res> {
+  factory _$$ResetBlocImplCopyWith(
+          _$ResetBlocImpl value, $Res Function(_$ResetBlocImpl) then) =
+      __$$ResetBlocImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ResetBlocCopyWithImpl<$Res>
-    extends _$DownloadEventCopyWithImpl<$Res, _$_ResetBloc>
-    implements _$$_ResetBlocCopyWith<$Res> {
-  __$$_ResetBlocCopyWithImpl(
-      _$_ResetBloc _value, $Res Function(_$_ResetBloc) _then)
+class __$$ResetBlocImplCopyWithImpl<$Res>
+    extends _$DownloadEventCopyWithImpl<$Res, _$ResetBlocImpl>
+    implements _$$ResetBlocImplCopyWith<$Res> {
+  __$$ResetBlocImplCopyWithImpl(
+      _$ResetBlocImpl _value, $Res Function(_$ResetBlocImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ResetBloc implements _ResetBloc {
-  const _$_ResetBloc();
+class _$ResetBlocImpl with DiagnosticableTreeMixin implements _ResetBloc {
+  const _$ResetBlocImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'DownloadEvent.resetBloc()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'DownloadEvent.resetBloc'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ResetBloc);
+        (other.runtimeType == runtimeType && other is _$ResetBlocImpl);
   }
 
   @override
@@ -377,7 +387,7 @@ class _$_ResetBloc implements _ResetBloc {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String url, String savePath) downloadFile,
+    required TResult Function(String url) downloadFile,
     required TResult Function() cancelDownload,
     required TResult Function() resetBloc,
   }) {
@@ -387,7 +397,7 @@ class _$_ResetBloc implements _ResetBloc {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String url, String savePath)? downloadFile,
+    TResult? Function(String url)? downloadFile,
     TResult? Function()? cancelDownload,
     TResult? Function()? resetBloc,
   }) {
@@ -397,7 +407,7 @@ class _$_ResetBloc implements _ResetBloc {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String url, String savePath)? downloadFile,
+    TResult Function(String url)? downloadFile,
     TResult Function()? cancelDownload,
     TResult Function()? resetBloc,
     required TResult orElse(),
@@ -444,7 +454,7 @@ class _$_ResetBloc implements _ResetBloc {
 }
 
 abstract class _ResetBloc implements DownloadEvent {
-  const factory _ResetBloc() = _$_ResetBloc;
+  const factory _ResetBloc() = _$ResetBlocImpl;
 }
 
 /// @nodoc
@@ -452,7 +462,7 @@ mixin _$DownloadState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() downloadInitial,
-    required TResult Function(String url, String savePath) downloadStarted,
+    required TResult Function(String url) downloadStarted,
     required TResult Function(double downloadPercent) downloadInProgress,
     required TResult Function() downloadCompleted,
     required TResult Function() downloadFailed,
@@ -461,7 +471,7 @@ mixin _$DownloadState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? downloadInitial,
-    TResult? Function(String url, String savePath)? downloadStarted,
+    TResult? Function(String url)? downloadStarted,
     TResult? Function(double downloadPercent)? downloadInProgress,
     TResult? Function()? downloadCompleted,
     TResult? Function()? downloadFailed,
@@ -470,7 +480,7 @@ mixin _$DownloadState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? downloadInitial,
-    TResult Function(String url, String savePath)? downloadStarted,
+    TResult Function(String url)? downloadStarted,
     TResult Function(double downloadPercent)? downloadInProgress,
     TResult Function()? downloadCompleted,
     TResult Function()? downloadFailed,
@@ -526,35 +536,44 @@ class _$DownloadStateCopyWithImpl<$Res, $Val extends DownloadState>
 }
 
 /// @nodoc
-abstract class _$$_DownloadInitialCopyWith<$Res> {
-  factory _$$_DownloadInitialCopyWith(
-          _$_DownloadInitial value, $Res Function(_$_DownloadInitial) then) =
-      __$$_DownloadInitialCopyWithImpl<$Res>;
+abstract class _$$DownloadInitialImplCopyWith<$Res> {
+  factory _$$DownloadInitialImplCopyWith(_$DownloadInitialImpl value,
+          $Res Function(_$DownloadInitialImpl) then) =
+      __$$DownloadInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DownloadInitialCopyWithImpl<$Res>
-    extends _$DownloadStateCopyWithImpl<$Res, _$_DownloadInitial>
-    implements _$$_DownloadInitialCopyWith<$Res> {
-  __$$_DownloadInitialCopyWithImpl(
-      _$_DownloadInitial _value, $Res Function(_$_DownloadInitial) _then)
+class __$$DownloadInitialImplCopyWithImpl<$Res>
+    extends _$DownloadStateCopyWithImpl<$Res, _$DownloadInitialImpl>
+    implements _$$DownloadInitialImplCopyWith<$Res> {
+  __$$DownloadInitialImplCopyWithImpl(
+      _$DownloadInitialImpl _value, $Res Function(_$DownloadInitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_DownloadInitial implements _DownloadInitial {
-  const _$_DownloadInitial();
+class _$DownloadInitialImpl
+    with DiagnosticableTreeMixin
+    implements _DownloadInitial {
+  const _$DownloadInitialImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'DownloadState.downloadInitial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'DownloadState.downloadInitial'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_DownloadInitial);
+        (other.runtimeType == runtimeType && other is _$DownloadInitialImpl);
   }
 
   @override
@@ -564,7 +583,7 @@ class _$_DownloadInitial implements _DownloadInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() downloadInitial,
-    required TResult Function(String url, String savePath) downloadStarted,
+    required TResult Function(String url) downloadStarted,
     required TResult Function(double downloadPercent) downloadInProgress,
     required TResult Function() downloadCompleted,
     required TResult Function() downloadFailed,
@@ -576,7 +595,7 @@ class _$_DownloadInitial implements _DownloadInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? downloadInitial,
-    TResult? Function(String url, String savePath)? downloadStarted,
+    TResult? Function(String url)? downloadStarted,
     TResult? Function(double downloadPercent)? downloadInProgress,
     TResult? Function()? downloadCompleted,
     TResult? Function()? downloadFailed,
@@ -588,7 +607,7 @@ class _$_DownloadInitial implements _DownloadInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? downloadInitial,
-    TResult Function(String url, String savePath)? downloadStarted,
+    TResult Function(String url)? downloadStarted,
     TResult Function(double downloadPercent)? downloadInProgress,
     TResult Function()? downloadCompleted,
     TResult Function()? downloadFailed,
@@ -642,40 +661,35 @@ class _$_DownloadInitial implements _DownloadInitial {
 }
 
 abstract class _DownloadInitial implements DownloadState {
-  const factory _DownloadInitial() = _$_DownloadInitial;
+  const factory _DownloadInitial() = _$DownloadInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_DownloadStartedCopyWith<$Res> {
-  factory _$$_DownloadStartedCopyWith(
-          _$_DownloadStarted value, $Res Function(_$_DownloadStarted) then) =
-      __$$_DownloadStartedCopyWithImpl<$Res>;
+abstract class _$$DownloadStartedImplCopyWith<$Res> {
+  factory _$$DownloadStartedImplCopyWith(_$DownloadStartedImpl value,
+          $Res Function(_$DownloadStartedImpl) then) =
+      __$$DownloadStartedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String url, String savePath});
+  $Res call({String url});
 }
 
 /// @nodoc
-class __$$_DownloadStartedCopyWithImpl<$Res>
-    extends _$DownloadStateCopyWithImpl<$Res, _$_DownloadStarted>
-    implements _$$_DownloadStartedCopyWith<$Res> {
-  __$$_DownloadStartedCopyWithImpl(
-      _$_DownloadStarted _value, $Res Function(_$_DownloadStarted) _then)
+class __$$DownloadStartedImplCopyWithImpl<$Res>
+    extends _$DownloadStateCopyWithImpl<$Res, _$DownloadStartedImpl>
+    implements _$$DownloadStartedImplCopyWith<$Res> {
+  __$$DownloadStartedImplCopyWithImpl(
+      _$DownloadStartedImpl _value, $Res Function(_$DownloadStartedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? url = null,
-    Object? savePath = null,
   }) {
-    return _then(_$_DownloadStarted(
+    return _then(_$DownloadStartedImpl(
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      savePath: null == savePath
-          ? _value.savePath
-          : savePath // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -683,74 +697,81 @@ class __$$_DownloadStartedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DownloadStarted implements _DownloadStarted {
-  const _$_DownloadStarted({required this.url, required this.savePath});
+class _$DownloadStartedImpl
+    with DiagnosticableTreeMixin
+    implements _DownloadStarted {
+  const _$DownloadStartedImpl({required this.url});
 
   @override
   final String url;
-  @override
-  final String savePath;
 
   @override
-  String toString() {
-    return 'DownloadState.downloadStarted(url: $url, savePath: $savePath)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'DownloadState.downloadStarted(url: $url)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'DownloadState.downloadStarted'))
+      ..add(DiagnosticsProperty('url', url));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DownloadStarted &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.savePath, savePath) ||
-                other.savePath == savePath));
+            other is _$DownloadStartedImpl &&
+            (identical(other.url, url) || other.url == url));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, url, savePath);
+  int get hashCode => Object.hash(runtimeType, url);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DownloadStartedCopyWith<_$_DownloadStarted> get copyWith =>
-      __$$_DownloadStartedCopyWithImpl<_$_DownloadStarted>(this, _$identity);
+  _$$DownloadStartedImplCopyWith<_$DownloadStartedImpl> get copyWith =>
+      __$$DownloadStartedImplCopyWithImpl<_$DownloadStartedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() downloadInitial,
-    required TResult Function(String url, String savePath) downloadStarted,
+    required TResult Function(String url) downloadStarted,
     required TResult Function(double downloadPercent) downloadInProgress,
     required TResult Function() downloadCompleted,
     required TResult Function() downloadFailed,
   }) {
-    return downloadStarted(url, savePath);
+    return downloadStarted(url);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? downloadInitial,
-    TResult? Function(String url, String savePath)? downloadStarted,
+    TResult? Function(String url)? downloadStarted,
     TResult? Function(double downloadPercent)? downloadInProgress,
     TResult? Function()? downloadCompleted,
     TResult? Function()? downloadFailed,
   }) {
-    return downloadStarted?.call(url, savePath);
+    return downloadStarted?.call(url);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? downloadInitial,
-    TResult Function(String url, String savePath)? downloadStarted,
+    TResult Function(String url)? downloadStarted,
     TResult Function(double downloadPercent)? downloadInProgress,
     TResult Function()? downloadCompleted,
     TResult Function()? downloadFailed,
     required TResult orElse(),
   }) {
     if (downloadStarted != null) {
-      return downloadStarted(url, savePath);
+      return downloadStarted(url);
     }
     return orElse();
   }
@@ -797,32 +818,30 @@ class _$_DownloadStarted implements _DownloadStarted {
 }
 
 abstract class _DownloadStarted implements DownloadState {
-  const factory _DownloadStarted(
-      {required final String url,
-      required final String savePath}) = _$_DownloadStarted;
+  const factory _DownloadStarted({required final String url}) =
+      _$DownloadStartedImpl;
 
   String get url;
-  String get savePath;
   @JsonKey(ignore: true)
-  _$$_DownloadStartedCopyWith<_$_DownloadStarted> get copyWith =>
+  _$$DownloadStartedImplCopyWith<_$DownloadStartedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_DownloadInProgressCopyWith<$Res> {
-  factory _$$_DownloadInProgressCopyWith(_$_DownloadInProgress value,
-          $Res Function(_$_DownloadInProgress) then) =
-      __$$_DownloadInProgressCopyWithImpl<$Res>;
+abstract class _$$DownloadInProgressImplCopyWith<$Res> {
+  factory _$$DownloadInProgressImplCopyWith(_$DownloadInProgressImpl value,
+          $Res Function(_$DownloadInProgressImpl) then) =
+      __$$DownloadInProgressImplCopyWithImpl<$Res>;
   @useResult
   $Res call({double downloadPercent});
 }
 
 /// @nodoc
-class __$$_DownloadInProgressCopyWithImpl<$Res>
-    extends _$DownloadStateCopyWithImpl<$Res, _$_DownloadInProgress>
-    implements _$$_DownloadInProgressCopyWith<$Res> {
-  __$$_DownloadInProgressCopyWithImpl(
-      _$_DownloadInProgress _value, $Res Function(_$_DownloadInProgress) _then)
+class __$$DownloadInProgressImplCopyWithImpl<$Res>
+    extends _$DownloadStateCopyWithImpl<$Res, _$DownloadInProgressImpl>
+    implements _$$DownloadInProgressImplCopyWith<$Res> {
+  __$$DownloadInProgressImplCopyWithImpl(_$DownloadInProgressImpl _value,
+      $Res Function(_$DownloadInProgressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -830,7 +849,7 @@ class __$$_DownloadInProgressCopyWithImpl<$Res>
   $Res call({
     Object? downloadPercent = null,
   }) {
-    return _then(_$_DownloadInProgress(
+    return _then(_$DownloadInProgressImpl(
       downloadPercent: null == downloadPercent
           ? _value.downloadPercent
           : downloadPercent // ignore: cast_nullable_to_non_nullable
@@ -841,22 +860,32 @@ class __$$_DownloadInProgressCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DownloadInProgress implements _DownloadInProgress {
-  const _$_DownloadInProgress({required this.downloadPercent});
+class _$DownloadInProgressImpl
+    with DiagnosticableTreeMixin
+    implements _DownloadInProgress {
+  const _$DownloadInProgressImpl({required this.downloadPercent});
 
   @override
   final double downloadPercent;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'DownloadState.downloadInProgress(downloadPercent: $downloadPercent)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'DownloadState.downloadInProgress'))
+      ..add(DiagnosticsProperty('downloadPercent', downloadPercent));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DownloadInProgress &&
+            other is _$DownloadInProgressImpl &&
             (identical(other.downloadPercent, downloadPercent) ||
                 other.downloadPercent == downloadPercent));
   }
@@ -867,15 +896,15 @@ class _$_DownloadInProgress implements _DownloadInProgress {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DownloadInProgressCopyWith<_$_DownloadInProgress> get copyWith =>
-      __$$_DownloadInProgressCopyWithImpl<_$_DownloadInProgress>(
+  _$$DownloadInProgressImplCopyWith<_$DownloadInProgressImpl> get copyWith =>
+      __$$DownloadInProgressImplCopyWithImpl<_$DownloadInProgressImpl>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() downloadInitial,
-    required TResult Function(String url, String savePath) downloadStarted,
+    required TResult Function(String url) downloadStarted,
     required TResult Function(double downloadPercent) downloadInProgress,
     required TResult Function() downloadCompleted,
     required TResult Function() downloadFailed,
@@ -887,7 +916,7 @@ class _$_DownloadInProgress implements _DownloadInProgress {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? downloadInitial,
-    TResult? Function(String url, String savePath)? downloadStarted,
+    TResult? Function(String url)? downloadStarted,
     TResult? Function(double downloadPercent)? downloadInProgress,
     TResult? Function()? downloadCompleted,
     TResult? Function()? downloadFailed,
@@ -899,7 +928,7 @@ class _$_DownloadInProgress implements _DownloadInProgress {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? downloadInitial,
-    TResult Function(String url, String savePath)? downloadStarted,
+    TResult Function(String url)? downloadStarted,
     TResult Function(double downloadPercent)? downloadInProgress,
     TResult Function()? downloadCompleted,
     TResult Function()? downloadFailed,
@@ -954,44 +983,53 @@ class _$_DownloadInProgress implements _DownloadInProgress {
 
 abstract class _DownloadInProgress implements DownloadState {
   const factory _DownloadInProgress({required final double downloadPercent}) =
-      _$_DownloadInProgress;
+      _$DownloadInProgressImpl;
 
   double get downloadPercent;
   @JsonKey(ignore: true)
-  _$$_DownloadInProgressCopyWith<_$_DownloadInProgress> get copyWith =>
+  _$$DownloadInProgressImplCopyWith<_$DownloadInProgressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_DownloadCompletedCopyWith<$Res> {
-  factory _$$_DownloadCompletedCopyWith(_$_DownloadCompleted value,
-          $Res Function(_$_DownloadCompleted) then) =
-      __$$_DownloadCompletedCopyWithImpl<$Res>;
+abstract class _$$DownloadCompletedImplCopyWith<$Res> {
+  factory _$$DownloadCompletedImplCopyWith(_$DownloadCompletedImpl value,
+          $Res Function(_$DownloadCompletedImpl) then) =
+      __$$DownloadCompletedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DownloadCompletedCopyWithImpl<$Res>
-    extends _$DownloadStateCopyWithImpl<$Res, _$_DownloadCompleted>
-    implements _$$_DownloadCompletedCopyWith<$Res> {
-  __$$_DownloadCompletedCopyWithImpl(
-      _$_DownloadCompleted _value, $Res Function(_$_DownloadCompleted) _then)
+class __$$DownloadCompletedImplCopyWithImpl<$Res>
+    extends _$DownloadStateCopyWithImpl<$Res, _$DownloadCompletedImpl>
+    implements _$$DownloadCompletedImplCopyWith<$Res> {
+  __$$DownloadCompletedImplCopyWithImpl(_$DownloadCompletedImpl _value,
+      $Res Function(_$DownloadCompletedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_DownloadCompleted implements _DownloadCompleted {
-  const _$_DownloadCompleted();
+class _$DownloadCompletedImpl
+    with DiagnosticableTreeMixin
+    implements _DownloadCompleted {
+  const _$DownloadCompletedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'DownloadState.downloadCompleted()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'DownloadState.downloadCompleted'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_DownloadCompleted);
+        (other.runtimeType == runtimeType && other is _$DownloadCompletedImpl);
   }
 
   @override
@@ -1001,7 +1039,7 @@ class _$_DownloadCompleted implements _DownloadCompleted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() downloadInitial,
-    required TResult Function(String url, String savePath) downloadStarted,
+    required TResult Function(String url) downloadStarted,
     required TResult Function(double downloadPercent) downloadInProgress,
     required TResult Function() downloadCompleted,
     required TResult Function() downloadFailed,
@@ -1013,7 +1051,7 @@ class _$_DownloadCompleted implements _DownloadCompleted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? downloadInitial,
-    TResult? Function(String url, String savePath)? downloadStarted,
+    TResult? Function(String url)? downloadStarted,
     TResult? Function(double downloadPercent)? downloadInProgress,
     TResult? Function()? downloadCompleted,
     TResult? Function()? downloadFailed,
@@ -1025,7 +1063,7 @@ class _$_DownloadCompleted implements _DownloadCompleted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? downloadInitial,
-    TResult Function(String url, String savePath)? downloadStarted,
+    TResult Function(String url)? downloadStarted,
     TResult Function(double downloadPercent)? downloadInProgress,
     TResult Function()? downloadCompleted,
     TResult Function()? downloadFailed,
@@ -1079,39 +1117,47 @@ class _$_DownloadCompleted implements _DownloadCompleted {
 }
 
 abstract class _DownloadCompleted implements DownloadState {
-  const factory _DownloadCompleted() = _$_DownloadCompleted;
+  const factory _DownloadCompleted() = _$DownloadCompletedImpl;
 }
 
 /// @nodoc
-abstract class _$$_DownloadFailedCopyWith<$Res> {
-  factory _$$_DownloadFailedCopyWith(
-          _$_DownloadFailed value, $Res Function(_$_DownloadFailed) then) =
-      __$$_DownloadFailedCopyWithImpl<$Res>;
+abstract class _$$DownloadFailedImplCopyWith<$Res> {
+  factory _$$DownloadFailedImplCopyWith(_$DownloadFailedImpl value,
+          $Res Function(_$DownloadFailedImpl) then) =
+      __$$DownloadFailedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DownloadFailedCopyWithImpl<$Res>
-    extends _$DownloadStateCopyWithImpl<$Res, _$_DownloadFailed>
-    implements _$$_DownloadFailedCopyWith<$Res> {
-  __$$_DownloadFailedCopyWithImpl(
-      _$_DownloadFailed _value, $Res Function(_$_DownloadFailed) _then)
+class __$$DownloadFailedImplCopyWithImpl<$Res>
+    extends _$DownloadStateCopyWithImpl<$Res, _$DownloadFailedImpl>
+    implements _$$DownloadFailedImplCopyWith<$Res> {
+  __$$DownloadFailedImplCopyWithImpl(
+      _$DownloadFailedImpl _value, $Res Function(_$DownloadFailedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_DownloadFailed implements _DownloadFailed {
-  const _$_DownloadFailed();
+class _$DownloadFailedImpl
+    with DiagnosticableTreeMixin
+    implements _DownloadFailed {
+  const _$DownloadFailedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'DownloadState.downloadFailed()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'DownloadState.downloadFailed'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_DownloadFailed);
+        (other.runtimeType == runtimeType && other is _$DownloadFailedImpl);
   }
 
   @override
@@ -1121,7 +1167,7 @@ class _$_DownloadFailed implements _DownloadFailed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() downloadInitial,
-    required TResult Function(String url, String savePath) downloadStarted,
+    required TResult Function(String url) downloadStarted,
     required TResult Function(double downloadPercent) downloadInProgress,
     required TResult Function() downloadCompleted,
     required TResult Function() downloadFailed,
@@ -1133,7 +1179,7 @@ class _$_DownloadFailed implements _DownloadFailed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? downloadInitial,
-    TResult? Function(String url, String savePath)? downloadStarted,
+    TResult? Function(String url)? downloadStarted,
     TResult? Function(double downloadPercent)? downloadInProgress,
     TResult? Function()? downloadCompleted,
     TResult? Function()? downloadFailed,
@@ -1145,7 +1191,7 @@ class _$_DownloadFailed implements _DownloadFailed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? downloadInitial,
-    TResult Function(String url, String savePath)? downloadStarted,
+    TResult Function(String url)? downloadStarted,
     TResult Function(double downloadPercent)? downloadInProgress,
     TResult Function()? downloadCompleted,
     TResult Function()? downloadFailed,
@@ -1199,5 +1245,5 @@ class _$_DownloadFailed implements _DownloadFailed {
 }
 
 abstract class _DownloadFailed implements DownloadState {
-  const factory _DownloadFailed() = _$_DownloadFailed;
+  const factory _DownloadFailed() = _$DownloadFailedImpl;
 }

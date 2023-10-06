@@ -5,21 +5,21 @@ class UpdateScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => CheckPermissionCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<CheckPermissionCubit>(
+          create: (_) => CheckPermissionCubit(),
+        ),
+        BlocProvider<DownloadBloc>(
+          create: (_) => DownloadBloc(),
+        ),
+      ],
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: const Text(StringValues.appTitle),
         ),
-        body: Center(
-          child: BlocBuilder<CheckPermissionCubit, PermissionState>(
-              builder: (context, state) {
-            return state == PermissionState.accepted
-                ? const Text(StringValues.permissionAccepted)
-                : const CheckStoragePermissionWidget();
-          }),
-        ),
+        body: const Center(child: CheckStoragePermissionWidget()),
       ),
     );
   }

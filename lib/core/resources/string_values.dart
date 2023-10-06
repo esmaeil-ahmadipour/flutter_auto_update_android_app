@@ -11,4 +11,6 @@ abstract class StringValues{
   static const tryAgain ='Try again';
   static const checkPermission ='Check Permission';
   static const sendRequestPermission ='Permission Request';
+  static const openFile ='Open File';
+  static const downloadFile ='Download File';
 }

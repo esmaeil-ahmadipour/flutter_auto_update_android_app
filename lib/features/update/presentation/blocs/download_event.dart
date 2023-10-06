@@ -3,7 +3,7 @@ part of 'download_bloc.dart';
 @freezed
 class DownloadEvent with _$DownloadEvent {
   const factory DownloadEvent.downloadFile(
-      {required String url, required String savePath}) = _DownloadFile;
+      {required String url}) = _DownloadFile;
 
   const factory DownloadEvent.cancelDownload() = _CancelDownload;
 

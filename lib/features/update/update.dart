@@ -6,3 +6,7 @@ export 'package:flutter_auto_update_android_app/features/update/presentation/wid
 export 'package:flutter_auto_update_android_app/features/update/presentation/blocs/check_permission_cubit.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:permission_handler_platform_interface/permission_handler_platform_interface.dart';
+export 'package:flutter_auto_update_android_app/features/update/presentation/widgets/download_button.dart';
+export 'package:flutter_auto_update_android_app/core/resources/constants.dart';
+export 'package:flutter_auto_update_android_app/features/splash/splash.dart';
+export 'package:flutter_auto_update_android_app/features/update/presentation/blocs/download_bloc.dart';

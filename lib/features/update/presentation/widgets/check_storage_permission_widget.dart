@@ -31,8 +31,7 @@ class _CheckStoragePermissionWidgetState
       bloc: cubit,
       builder: (context, state) {
         return switch (state) {
-          PermissionState.accepted =>
-            const Text(StringValues.permissionAccepted),
+          PermissionState.accepted => const DownloadButton(),
           PermissionState.initial => const SizedBox(),
           PermissionState.requested => Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -96,15 +95,18 @@ class _CheckStoragePermissionWidgetState
   }
 
   Future<void> _checkPermission() async {
-    Future.delayed(Duration.zero, () async {
-      PermissionStatus permissionStatus = await PermissionHandlerPlatform
-          .instance
-          .checkPermissionStatus(Permission.storage);
-      if (permissionStatus.isGranted) {
-        cubit.changeState(state: PermissionState.accepted);
-      } else {
-        cubit.changeState(state: PermissionState.requested);
-      }
-    });
+    Future.delayed(
+      Duration.zero,
+      () async {
+        PermissionStatus permissionStatus = await PermissionHandlerPlatform
+            .instance
+            .checkPermissionStatus(Permission.storage);
+        if (permissionStatus.isGranted) {
+          cubit.changeState(state: PermissionState.accepted);
+        } else {
+          cubit.changeState(state: PermissionState.requested);
+        }
+      },
+    );
   }
 }
