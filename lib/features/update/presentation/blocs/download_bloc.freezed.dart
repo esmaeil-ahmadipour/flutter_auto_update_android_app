@@ -20,6 +20,7 @@ mixin _$DownloadEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String url) downloadFile,
     required TResult Function() cancelDownload,
+    required TResult Function(String filePath) getInstallPermission,
     required TResult Function() resetBloc,
   }) =>
       throw _privateConstructorUsedError;
@@ -27,6 +28,7 @@ mixin _$DownloadEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String url)? downloadFile,
     TResult? Function()? cancelDownload,
+    TResult? Function(String filePath)? getInstallPermission,
     TResult? Function()? resetBloc,
   }) =>
       throw _privateConstructorUsedError;
@@ -34,6 +36,7 @@ mixin _$DownloadEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String url)? downloadFile,
     TResult Function()? cancelDownload,
+    TResult Function(String filePath)? getInstallPermission,
     TResult Function()? resetBloc,
     required TResult orElse(),
   }) =>
@@ -42,6 +45,7 @@ mixin _$DownloadEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_DownloadFile value) downloadFile,
     required TResult Function(_CancelDownload value) cancelDownload,
+    required TResult Function(_GetInstallPermission value) getInstallPermission,
     required TResult Function(_ResetBloc value) resetBloc,
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +53,7 @@ mixin _$DownloadEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_DownloadFile value)? downloadFile,
     TResult? Function(_CancelDownload value)? cancelDownload,
+    TResult? Function(_GetInstallPermission value)? getInstallPermission,
     TResult? Function(_ResetBloc value)? resetBloc,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +61,7 @@ mixin _$DownloadEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DownloadFile value)? downloadFile,
     TResult Function(_CancelDownload value)? cancelDownload,
+    TResult Function(_GetInstallPermission value)? getInstallPermission,
     TResult Function(_ResetBloc value)? resetBloc,
     required TResult orElse(),
   }) =>
@@ -154,6 +160,7 @@ class _$DownloadFileImpl with DiagnosticableTreeMixin implements _DownloadFile {
   TResult when<TResult extends Object?>({
     required TResult Function(String url) downloadFile,
     required TResult Function() cancelDownload,
+    required TResult Function(String filePath) getInstallPermission,
     required TResult Function() resetBloc,
   }) {
     return downloadFile(url);
@@ -164,6 +171,7 @@ class _$DownloadFileImpl with DiagnosticableTreeMixin implements _DownloadFile {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String url)? downloadFile,
     TResult? Function()? cancelDownload,
+    TResult? Function(String filePath)? getInstallPermission,
     TResult? Function()? resetBloc,
   }) {
     return downloadFile?.call(url);
@@ -174,6 +182,7 @@ class _$DownloadFileImpl with DiagnosticableTreeMixin implements _DownloadFile {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String url)? downloadFile,
     TResult Function()? cancelDownload,
+    TResult Function(String filePath)? getInstallPermission,
     TResult Function()? resetBloc,
     required TResult orElse(),
   }) {
@@ -188,6 +197,7 @@ class _$DownloadFileImpl with DiagnosticableTreeMixin implements _DownloadFile {
   TResult map<TResult extends Object?>({
     required TResult Function(_DownloadFile value) downloadFile,
     required TResult Function(_CancelDownload value) cancelDownload,
+    required TResult Function(_GetInstallPermission value) getInstallPermission,
     required TResult Function(_ResetBloc value) resetBloc,
   }) {
     return downloadFile(this);
@@ -198,6 +208,7 @@ class _$DownloadFileImpl with DiagnosticableTreeMixin implements _DownloadFile {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_DownloadFile value)? downloadFile,
     TResult? Function(_CancelDownload value)? cancelDownload,
+    TResult? Function(_GetInstallPermission value)? getInstallPermission,
     TResult? Function(_ResetBloc value)? resetBloc,
   }) {
     return downloadFile?.call(this);
@@ -208,6 +219,7 @@ class _$DownloadFileImpl with DiagnosticableTreeMixin implements _DownloadFile {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DownloadFile value)? downloadFile,
     TResult Function(_CancelDownload value)? cancelDownload,
+    TResult Function(_GetInstallPermission value)? getInstallPermission,
     TResult Function(_ResetBloc value)? resetBloc,
     required TResult orElse(),
   }) {
@@ -275,6 +287,7 @@ class _$CancelDownloadImpl
   TResult when<TResult extends Object?>({
     required TResult Function(String url) downloadFile,
     required TResult Function() cancelDownload,
+    required TResult Function(String filePath) getInstallPermission,
     required TResult Function() resetBloc,
   }) {
     return cancelDownload();
@@ -285,6 +298,7 @@ class _$CancelDownloadImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String url)? downloadFile,
     TResult? Function()? cancelDownload,
+    TResult? Function(String filePath)? getInstallPermission,
     TResult? Function()? resetBloc,
   }) {
     return cancelDownload?.call();
@@ -295,6 +309,7 @@ class _$CancelDownloadImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String url)? downloadFile,
     TResult Function()? cancelDownload,
+    TResult Function(String filePath)? getInstallPermission,
     TResult Function()? resetBloc,
     required TResult orElse(),
   }) {
@@ -309,6 +324,7 @@ class _$CancelDownloadImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_DownloadFile value) downloadFile,
     required TResult Function(_CancelDownload value) cancelDownload,
+    required TResult Function(_GetInstallPermission value) getInstallPermission,
     required TResult Function(_ResetBloc value) resetBloc,
   }) {
     return cancelDownload(this);
@@ -319,6 +335,7 @@ class _$CancelDownloadImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_DownloadFile value)? downloadFile,
     TResult? Function(_CancelDownload value)? cancelDownload,
+    TResult? Function(_GetInstallPermission value)? getInstallPermission,
     TResult? Function(_ResetBloc value)? resetBloc,
   }) {
     return cancelDownload?.call(this);
@@ -329,6 +346,7 @@ class _$CancelDownloadImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DownloadFile value)? downloadFile,
     TResult Function(_CancelDownload value)? cancelDownload,
+    TResult Function(_GetInstallPermission value)? getInstallPermission,
     TResult Function(_ResetBloc value)? resetBloc,
     required TResult orElse(),
   }) {
@@ -341,6 +359,165 @@ class _$CancelDownloadImpl
 
 abstract class _CancelDownload implements DownloadEvent {
   const factory _CancelDownload() = _$CancelDownloadImpl;
+}
+
+/// @nodoc
+abstract class _$$GetInstallPermissionImplCopyWith<$Res> {
+  factory _$$GetInstallPermissionImplCopyWith(_$GetInstallPermissionImpl value,
+          $Res Function(_$GetInstallPermissionImpl) then) =
+      __$$GetInstallPermissionImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String filePath});
+}
+
+/// @nodoc
+class __$$GetInstallPermissionImplCopyWithImpl<$Res>
+    extends _$DownloadEventCopyWithImpl<$Res, _$GetInstallPermissionImpl>
+    implements _$$GetInstallPermissionImplCopyWith<$Res> {
+  __$$GetInstallPermissionImplCopyWithImpl(_$GetInstallPermissionImpl _value,
+      $Res Function(_$GetInstallPermissionImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? filePath = null,
+  }) {
+    return _then(_$GetInstallPermissionImpl(
+      filePath: null == filePath
+          ? _value.filePath
+          : filePath // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetInstallPermissionImpl
+    with DiagnosticableTreeMixin
+    implements _GetInstallPermission {
+  const _$GetInstallPermissionImpl({required this.filePath});
+
+  @override
+  final String filePath;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'DownloadEvent.getInstallPermission(filePath: $filePath)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'DownloadEvent.getInstallPermission'))
+      ..add(DiagnosticsProperty('filePath', filePath));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetInstallPermissionImpl &&
+            (identical(other.filePath, filePath) ||
+                other.filePath == filePath));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, filePath);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetInstallPermissionImplCopyWith<_$GetInstallPermissionImpl>
+      get copyWith =>
+          __$$GetInstallPermissionImplCopyWithImpl<_$GetInstallPermissionImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String url) downloadFile,
+    required TResult Function() cancelDownload,
+    required TResult Function(String filePath) getInstallPermission,
+    required TResult Function() resetBloc,
+  }) {
+    return getInstallPermission(filePath);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String url)? downloadFile,
+    TResult? Function()? cancelDownload,
+    TResult? Function(String filePath)? getInstallPermission,
+    TResult? Function()? resetBloc,
+  }) {
+    return getInstallPermission?.call(filePath);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String url)? downloadFile,
+    TResult Function()? cancelDownload,
+    TResult Function(String filePath)? getInstallPermission,
+    TResult Function()? resetBloc,
+    required TResult orElse(),
+  }) {
+    if (getInstallPermission != null) {
+      return getInstallPermission(filePath);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DownloadFile value) downloadFile,
+    required TResult Function(_CancelDownload value) cancelDownload,
+    required TResult Function(_GetInstallPermission value) getInstallPermission,
+    required TResult Function(_ResetBloc value) resetBloc,
+  }) {
+    return getInstallPermission(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DownloadFile value)? downloadFile,
+    TResult? Function(_CancelDownload value)? cancelDownload,
+    TResult? Function(_GetInstallPermission value)? getInstallPermission,
+    TResult? Function(_ResetBloc value)? resetBloc,
+  }) {
+    return getInstallPermission?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DownloadFile value)? downloadFile,
+    TResult Function(_CancelDownload value)? cancelDownload,
+    TResult Function(_GetInstallPermission value)? getInstallPermission,
+    TResult Function(_ResetBloc value)? resetBloc,
+    required TResult orElse(),
+  }) {
+    if (getInstallPermission != null) {
+      return getInstallPermission(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetInstallPermission implements DownloadEvent {
+  const factory _GetInstallPermission({required final String filePath}) =
+      _$GetInstallPermissionImpl;
+
+  String get filePath;
+  @JsonKey(ignore: true)
+  _$$GetInstallPermissionImplCopyWith<_$GetInstallPermissionImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -389,6 +566,7 @@ class _$ResetBlocImpl with DiagnosticableTreeMixin implements _ResetBloc {
   TResult when<TResult extends Object?>({
     required TResult Function(String url) downloadFile,
     required TResult Function() cancelDownload,
+    required TResult Function(String filePath) getInstallPermission,
     required TResult Function() resetBloc,
   }) {
     return resetBloc();
@@ -399,6 +577,7 @@ class _$ResetBlocImpl with DiagnosticableTreeMixin implements _ResetBloc {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String url)? downloadFile,
     TResult? Function()? cancelDownload,
+    TResult? Function(String filePath)? getInstallPermission,
     TResult? Function()? resetBloc,
   }) {
     return resetBloc?.call();
@@ -409,6 +588,7 @@ class _$ResetBlocImpl with DiagnosticableTreeMixin implements _ResetBloc {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String url)? downloadFile,
     TResult Function()? cancelDownload,
+    TResult Function(String filePath)? getInstallPermission,
     TResult Function()? resetBloc,
     required TResult orElse(),
   }) {
@@ -423,6 +603,7 @@ class _$ResetBlocImpl with DiagnosticableTreeMixin implements _ResetBloc {
   TResult map<TResult extends Object?>({
     required TResult Function(_DownloadFile value) downloadFile,
     required TResult Function(_CancelDownload value) cancelDownload,
+    required TResult Function(_GetInstallPermission value) getInstallPermission,
     required TResult Function(_ResetBloc value) resetBloc,
   }) {
     return resetBloc(this);
@@ -433,6 +614,7 @@ class _$ResetBlocImpl with DiagnosticableTreeMixin implements _ResetBloc {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_DownloadFile value)? downloadFile,
     TResult? Function(_CancelDownload value)? cancelDownload,
+    TResult? Function(_GetInstallPermission value)? getInstallPermission,
     TResult? Function(_ResetBloc value)? resetBloc,
   }) {
     return resetBloc?.call(this);
@@ -443,6 +625,7 @@ class _$ResetBlocImpl with DiagnosticableTreeMixin implements _ResetBloc {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DownloadFile value)? downloadFile,
     TResult Function(_CancelDownload value)? cancelDownload,
+    TResult Function(_GetInstallPermission value)? getInstallPermission,
     TResult Function(_ResetBloc value)? resetBloc,
     required TResult orElse(),
   }) {
@@ -462,27 +645,36 @@ mixin _$DownloadState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() downloadInitial,
-    required TResult Function(String url) downloadStarted,
+    required TResult Function() downloadStarted,
     required TResult Function(double downloadPercent) downloadInProgress,
-    required TResult Function() downloadCompleted,
+    required TResult Function(String filePath) downloadCompleted,
+    required TResult Function() denyInstallingPermission,
+    required TResult Function() acceptedInstallingPermission,
+    required TResult Function() openApkFile,
     required TResult Function() downloadFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? downloadInitial,
-    TResult? Function(String url)? downloadStarted,
+    TResult? Function()? downloadStarted,
     TResult? Function(double downloadPercent)? downloadInProgress,
-    TResult? Function()? downloadCompleted,
+    TResult? Function(String filePath)? downloadCompleted,
+    TResult? Function()? denyInstallingPermission,
+    TResult? Function()? acceptedInstallingPermission,
+    TResult? Function()? openApkFile,
     TResult? Function()? downloadFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? downloadInitial,
-    TResult Function(String url)? downloadStarted,
+    TResult Function()? downloadStarted,
     TResult Function(double downloadPercent)? downloadInProgress,
-    TResult Function()? downloadCompleted,
+    TResult Function(String filePath)? downloadCompleted,
+    TResult Function()? denyInstallingPermission,
+    TResult Function()? acceptedInstallingPermission,
+    TResult Function()? openApkFile,
     TResult Function()? downloadFailed,
     required TResult orElse(),
   }) =>
@@ -493,6 +685,11 @@ mixin _$DownloadState {
     required TResult Function(_DownloadStarted value) downloadStarted,
     required TResult Function(_DownloadInProgress value) downloadInProgress,
     required TResult Function(_DownloadCompleted value) downloadCompleted,
+    required TResult Function(_DenyInstallingPermission value)
+        denyInstallingPermission,
+    required TResult Function(_AcceptedInstallingPermission value)
+        acceptedInstallingPermission,
+    required TResult Function(_OpenFile value) openApkFile,
     required TResult Function(_DownloadFailed value) downloadFailed,
   }) =>
       throw _privateConstructorUsedError;
@@ -502,6 +699,11 @@ mixin _$DownloadState {
     TResult? Function(_DownloadStarted value)? downloadStarted,
     TResult? Function(_DownloadInProgress value)? downloadInProgress,
     TResult? Function(_DownloadCompleted value)? downloadCompleted,
+    TResult? Function(_DenyInstallingPermission value)?
+        denyInstallingPermission,
+    TResult? Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult? Function(_OpenFile value)? openApkFile,
     TResult? Function(_DownloadFailed value)? downloadFailed,
   }) =>
       throw _privateConstructorUsedError;
@@ -511,6 +713,10 @@ mixin _$DownloadState {
     TResult Function(_DownloadStarted value)? downloadStarted,
     TResult Function(_DownloadInProgress value)? downloadInProgress,
     TResult Function(_DownloadCompleted value)? downloadCompleted,
+    TResult Function(_DenyInstallingPermission value)? denyInstallingPermission,
+    TResult Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult Function(_OpenFile value)? openApkFile,
     TResult Function(_DownloadFailed value)? downloadFailed,
     required TResult orElse(),
   }) =>
@@ -583,9 +789,12 @@ class _$DownloadInitialImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() downloadInitial,
-    required TResult Function(String url) downloadStarted,
+    required TResult Function() downloadStarted,
     required TResult Function(double downloadPercent) downloadInProgress,
-    required TResult Function() downloadCompleted,
+    required TResult Function(String filePath) downloadCompleted,
+    required TResult Function() denyInstallingPermission,
+    required TResult Function() acceptedInstallingPermission,
+    required TResult Function() openApkFile,
     required TResult Function() downloadFailed,
   }) {
     return downloadInitial();
@@ -595,9 +804,12 @@ class _$DownloadInitialImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? downloadInitial,
-    TResult? Function(String url)? downloadStarted,
+    TResult? Function()? downloadStarted,
     TResult? Function(double downloadPercent)? downloadInProgress,
-    TResult? Function()? downloadCompleted,
+    TResult? Function(String filePath)? downloadCompleted,
+    TResult? Function()? denyInstallingPermission,
+    TResult? Function()? acceptedInstallingPermission,
+    TResult? Function()? openApkFile,
     TResult? Function()? downloadFailed,
   }) {
     return downloadInitial?.call();
@@ -607,9 +819,12 @@ class _$DownloadInitialImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? downloadInitial,
-    TResult Function(String url)? downloadStarted,
+    TResult Function()? downloadStarted,
     TResult Function(double downloadPercent)? downloadInProgress,
-    TResult Function()? downloadCompleted,
+    TResult Function(String filePath)? downloadCompleted,
+    TResult Function()? denyInstallingPermission,
+    TResult Function()? acceptedInstallingPermission,
+    TResult Function()? openApkFile,
     TResult Function()? downloadFailed,
     required TResult orElse(),
   }) {
@@ -626,6 +841,11 @@ class _$DownloadInitialImpl
     required TResult Function(_DownloadStarted value) downloadStarted,
     required TResult Function(_DownloadInProgress value) downloadInProgress,
     required TResult Function(_DownloadCompleted value) downloadCompleted,
+    required TResult Function(_DenyInstallingPermission value)
+        denyInstallingPermission,
+    required TResult Function(_AcceptedInstallingPermission value)
+        acceptedInstallingPermission,
+    required TResult Function(_OpenFile value) openApkFile,
     required TResult Function(_DownloadFailed value) downloadFailed,
   }) {
     return downloadInitial(this);
@@ -638,6 +858,11 @@ class _$DownloadInitialImpl
     TResult? Function(_DownloadStarted value)? downloadStarted,
     TResult? Function(_DownloadInProgress value)? downloadInProgress,
     TResult? Function(_DownloadCompleted value)? downloadCompleted,
+    TResult? Function(_DenyInstallingPermission value)?
+        denyInstallingPermission,
+    TResult? Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult? Function(_OpenFile value)? openApkFile,
     TResult? Function(_DownloadFailed value)? downloadFailed,
   }) {
     return downloadInitial?.call(this);
@@ -650,6 +875,10 @@ class _$DownloadInitialImpl
     TResult Function(_DownloadStarted value)? downloadStarted,
     TResult Function(_DownloadInProgress value)? downloadInProgress,
     TResult Function(_DownloadCompleted value)? downloadCompleted,
+    TResult Function(_DenyInstallingPermission value)? denyInstallingPermission,
+    TResult Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult Function(_OpenFile value)? openApkFile,
     TResult Function(_DownloadFailed value)? downloadFailed,
     required TResult orElse(),
   }) {
@@ -669,8 +898,6 @@ abstract class _$$DownloadStartedImplCopyWith<$Res> {
   factory _$$DownloadStartedImplCopyWith(_$DownloadStartedImpl value,
           $Res Function(_$DownloadStartedImpl) then) =
       __$$DownloadStartedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String url});
 }
 
 /// @nodoc
@@ -680,19 +907,6 @@ class __$$DownloadStartedImplCopyWithImpl<$Res>
   __$$DownloadStartedImplCopyWithImpl(
       _$DownloadStartedImpl _value, $Res Function(_$DownloadStartedImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? url = null,
-  }) {
-    return _then(_$DownloadStartedImpl(
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
@@ -700,78 +914,74 @@ class __$$DownloadStartedImplCopyWithImpl<$Res>
 class _$DownloadStartedImpl
     with DiagnosticableTreeMixin
     implements _DownloadStarted {
-  const _$DownloadStartedImpl({required this.url});
-
-  @override
-  final String url;
+  const _$DownloadStartedImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'DownloadState.downloadStarted(url: $url)';
+    return 'DownloadState.downloadStarted()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'DownloadState.downloadStarted'))
-      ..add(DiagnosticsProperty('url', url));
+        .add(DiagnosticsProperty('type', 'DownloadState.downloadStarted'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DownloadStartedImpl &&
-            (identical(other.url, url) || other.url == url));
+        (other.runtimeType == runtimeType && other is _$DownloadStartedImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, url);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DownloadStartedImplCopyWith<_$DownloadStartedImpl> get copyWith =>
-      __$$DownloadStartedImplCopyWithImpl<_$DownloadStartedImpl>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() downloadInitial,
-    required TResult Function(String url) downloadStarted,
+    required TResult Function() downloadStarted,
     required TResult Function(double downloadPercent) downloadInProgress,
-    required TResult Function() downloadCompleted,
+    required TResult Function(String filePath) downloadCompleted,
+    required TResult Function() denyInstallingPermission,
+    required TResult Function() acceptedInstallingPermission,
+    required TResult Function() openApkFile,
     required TResult Function() downloadFailed,
   }) {
-    return downloadStarted(url);
+    return downloadStarted();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? downloadInitial,
-    TResult? Function(String url)? downloadStarted,
+    TResult? Function()? downloadStarted,
     TResult? Function(double downloadPercent)? downloadInProgress,
-    TResult? Function()? downloadCompleted,
+    TResult? Function(String filePath)? downloadCompleted,
+    TResult? Function()? denyInstallingPermission,
+    TResult? Function()? acceptedInstallingPermission,
+    TResult? Function()? openApkFile,
     TResult? Function()? downloadFailed,
   }) {
-    return downloadStarted?.call(url);
+    return downloadStarted?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? downloadInitial,
-    TResult Function(String url)? downloadStarted,
+    TResult Function()? downloadStarted,
     TResult Function(double downloadPercent)? downloadInProgress,
-    TResult Function()? downloadCompleted,
+    TResult Function(String filePath)? downloadCompleted,
+    TResult Function()? denyInstallingPermission,
+    TResult Function()? acceptedInstallingPermission,
+    TResult Function()? openApkFile,
     TResult Function()? downloadFailed,
     required TResult orElse(),
   }) {
     if (downloadStarted != null) {
-      return downloadStarted(url);
+      return downloadStarted();
     }
     return orElse();
   }
@@ -783,6 +993,11 @@ class _$DownloadStartedImpl
     required TResult Function(_DownloadStarted value) downloadStarted,
     required TResult Function(_DownloadInProgress value) downloadInProgress,
     required TResult Function(_DownloadCompleted value) downloadCompleted,
+    required TResult Function(_DenyInstallingPermission value)
+        denyInstallingPermission,
+    required TResult Function(_AcceptedInstallingPermission value)
+        acceptedInstallingPermission,
+    required TResult Function(_OpenFile value) openApkFile,
     required TResult Function(_DownloadFailed value) downloadFailed,
   }) {
     return downloadStarted(this);
@@ -795,6 +1010,11 @@ class _$DownloadStartedImpl
     TResult? Function(_DownloadStarted value)? downloadStarted,
     TResult? Function(_DownloadInProgress value)? downloadInProgress,
     TResult? Function(_DownloadCompleted value)? downloadCompleted,
+    TResult? Function(_DenyInstallingPermission value)?
+        denyInstallingPermission,
+    TResult? Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult? Function(_OpenFile value)? openApkFile,
     TResult? Function(_DownloadFailed value)? downloadFailed,
   }) {
     return downloadStarted?.call(this);
@@ -807,6 +1027,10 @@ class _$DownloadStartedImpl
     TResult Function(_DownloadStarted value)? downloadStarted,
     TResult Function(_DownloadInProgress value)? downloadInProgress,
     TResult Function(_DownloadCompleted value)? downloadCompleted,
+    TResult Function(_DenyInstallingPermission value)? denyInstallingPermission,
+    TResult Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult Function(_OpenFile value)? openApkFile,
     TResult Function(_DownloadFailed value)? downloadFailed,
     required TResult orElse(),
   }) {
@@ -818,13 +1042,7 @@ class _$DownloadStartedImpl
 }
 
 abstract class _DownloadStarted implements DownloadState {
-  const factory _DownloadStarted({required final String url}) =
-      _$DownloadStartedImpl;
-
-  String get url;
-  @JsonKey(ignore: true)
-  _$$DownloadStartedImplCopyWith<_$DownloadStartedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _DownloadStarted() = _$DownloadStartedImpl;
 }
 
 /// @nodoc
@@ -904,9 +1122,12 @@ class _$DownloadInProgressImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() downloadInitial,
-    required TResult Function(String url) downloadStarted,
+    required TResult Function() downloadStarted,
     required TResult Function(double downloadPercent) downloadInProgress,
-    required TResult Function() downloadCompleted,
+    required TResult Function(String filePath) downloadCompleted,
+    required TResult Function() denyInstallingPermission,
+    required TResult Function() acceptedInstallingPermission,
+    required TResult Function() openApkFile,
     required TResult Function() downloadFailed,
   }) {
     return downloadInProgress(downloadPercent);
@@ -916,9 +1137,12 @@ class _$DownloadInProgressImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? downloadInitial,
-    TResult? Function(String url)? downloadStarted,
+    TResult? Function()? downloadStarted,
     TResult? Function(double downloadPercent)? downloadInProgress,
-    TResult? Function()? downloadCompleted,
+    TResult? Function(String filePath)? downloadCompleted,
+    TResult? Function()? denyInstallingPermission,
+    TResult? Function()? acceptedInstallingPermission,
+    TResult? Function()? openApkFile,
     TResult? Function()? downloadFailed,
   }) {
     return downloadInProgress?.call(downloadPercent);
@@ -928,9 +1152,12 @@ class _$DownloadInProgressImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? downloadInitial,
-    TResult Function(String url)? downloadStarted,
+    TResult Function()? downloadStarted,
     TResult Function(double downloadPercent)? downloadInProgress,
-    TResult Function()? downloadCompleted,
+    TResult Function(String filePath)? downloadCompleted,
+    TResult Function()? denyInstallingPermission,
+    TResult Function()? acceptedInstallingPermission,
+    TResult Function()? openApkFile,
     TResult Function()? downloadFailed,
     required TResult orElse(),
   }) {
@@ -947,6 +1174,11 @@ class _$DownloadInProgressImpl
     required TResult Function(_DownloadStarted value) downloadStarted,
     required TResult Function(_DownloadInProgress value) downloadInProgress,
     required TResult Function(_DownloadCompleted value) downloadCompleted,
+    required TResult Function(_DenyInstallingPermission value)
+        denyInstallingPermission,
+    required TResult Function(_AcceptedInstallingPermission value)
+        acceptedInstallingPermission,
+    required TResult Function(_OpenFile value) openApkFile,
     required TResult Function(_DownloadFailed value) downloadFailed,
   }) {
     return downloadInProgress(this);
@@ -959,6 +1191,11 @@ class _$DownloadInProgressImpl
     TResult? Function(_DownloadStarted value)? downloadStarted,
     TResult? Function(_DownloadInProgress value)? downloadInProgress,
     TResult? Function(_DownloadCompleted value)? downloadCompleted,
+    TResult? Function(_DenyInstallingPermission value)?
+        denyInstallingPermission,
+    TResult? Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult? Function(_OpenFile value)? openApkFile,
     TResult? Function(_DownloadFailed value)? downloadFailed,
   }) {
     return downloadInProgress?.call(this);
@@ -971,6 +1208,10 @@ class _$DownloadInProgressImpl
     TResult Function(_DownloadStarted value)? downloadStarted,
     TResult Function(_DownloadInProgress value)? downloadInProgress,
     TResult Function(_DownloadCompleted value)? downloadCompleted,
+    TResult Function(_DenyInstallingPermission value)? denyInstallingPermission,
+    TResult Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult Function(_OpenFile value)? openApkFile,
     TResult Function(_DownloadFailed value)? downloadFailed,
     required TResult orElse(),
   }) {
@@ -996,6 +1237,8 @@ abstract class _$$DownloadCompletedImplCopyWith<$Res> {
   factory _$$DownloadCompletedImplCopyWith(_$DownloadCompletedImpl value,
           $Res Function(_$DownloadCompletedImpl) then) =
       __$$DownloadCompletedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String filePath});
 }
 
 /// @nodoc
@@ -1005,6 +1248,19 @@ class __$$DownloadCompletedImplCopyWithImpl<$Res>
   __$$DownloadCompletedImplCopyWithImpl(_$DownloadCompletedImpl _value,
       $Res Function(_$DownloadCompletedImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? filePath = null,
+  }) {
+    return _then(_$DownloadCompletedImpl(
+      filePath: null == filePath
+          ? _value.filePath
+          : filePath // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
@@ -1012,65 +1268,88 @@ class __$$DownloadCompletedImplCopyWithImpl<$Res>
 class _$DownloadCompletedImpl
     with DiagnosticableTreeMixin
     implements _DownloadCompleted {
-  const _$DownloadCompletedImpl();
+  const _$DownloadCompletedImpl({required this.filePath});
+
+  @override
+  final String filePath;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'DownloadState.downloadCompleted()';
+    return 'DownloadState.downloadCompleted(filePath: $filePath)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-        .add(DiagnosticsProperty('type', 'DownloadState.downloadCompleted'));
+      ..add(DiagnosticsProperty('type', 'DownloadState.downloadCompleted'))
+      ..add(DiagnosticsProperty('filePath', filePath));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$DownloadCompletedImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$DownloadCompletedImpl &&
+            (identical(other.filePath, filePath) ||
+                other.filePath == filePath));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, filePath);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DownloadCompletedImplCopyWith<_$DownloadCompletedImpl> get copyWith =>
+      __$$DownloadCompletedImplCopyWithImpl<_$DownloadCompletedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() downloadInitial,
-    required TResult Function(String url) downloadStarted,
+    required TResult Function() downloadStarted,
     required TResult Function(double downloadPercent) downloadInProgress,
-    required TResult Function() downloadCompleted,
+    required TResult Function(String filePath) downloadCompleted,
+    required TResult Function() denyInstallingPermission,
+    required TResult Function() acceptedInstallingPermission,
+    required TResult Function() openApkFile,
     required TResult Function() downloadFailed,
   }) {
-    return downloadCompleted();
+    return downloadCompleted(filePath);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? downloadInitial,
-    TResult? Function(String url)? downloadStarted,
+    TResult? Function()? downloadStarted,
     TResult? Function(double downloadPercent)? downloadInProgress,
-    TResult? Function()? downloadCompleted,
+    TResult? Function(String filePath)? downloadCompleted,
+    TResult? Function()? denyInstallingPermission,
+    TResult? Function()? acceptedInstallingPermission,
+    TResult? Function()? openApkFile,
     TResult? Function()? downloadFailed,
   }) {
-    return downloadCompleted?.call();
+    return downloadCompleted?.call(filePath);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? downloadInitial,
-    TResult Function(String url)? downloadStarted,
+    TResult Function()? downloadStarted,
     TResult Function(double downloadPercent)? downloadInProgress,
-    TResult Function()? downloadCompleted,
+    TResult Function(String filePath)? downloadCompleted,
+    TResult Function()? denyInstallingPermission,
+    TResult Function()? acceptedInstallingPermission,
+    TResult Function()? openApkFile,
     TResult Function()? downloadFailed,
     required TResult orElse(),
   }) {
     if (downloadCompleted != null) {
-      return downloadCompleted();
+      return downloadCompleted(filePath);
     }
     return orElse();
   }
@@ -1082,6 +1361,11 @@ class _$DownloadCompletedImpl
     required TResult Function(_DownloadStarted value) downloadStarted,
     required TResult Function(_DownloadInProgress value) downloadInProgress,
     required TResult Function(_DownloadCompleted value) downloadCompleted,
+    required TResult Function(_DenyInstallingPermission value)
+        denyInstallingPermission,
+    required TResult Function(_AcceptedInstallingPermission value)
+        acceptedInstallingPermission,
+    required TResult Function(_OpenFile value) openApkFile,
     required TResult Function(_DownloadFailed value) downloadFailed,
   }) {
     return downloadCompleted(this);
@@ -1094,6 +1378,11 @@ class _$DownloadCompletedImpl
     TResult? Function(_DownloadStarted value)? downloadStarted,
     TResult? Function(_DownloadInProgress value)? downloadInProgress,
     TResult? Function(_DownloadCompleted value)? downloadCompleted,
+    TResult? Function(_DenyInstallingPermission value)?
+        denyInstallingPermission,
+    TResult? Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult? Function(_OpenFile value)? openApkFile,
     TResult? Function(_DownloadFailed value)? downloadFailed,
   }) {
     return downloadCompleted?.call(this);
@@ -1106,6 +1395,10 @@ class _$DownloadCompletedImpl
     TResult Function(_DownloadStarted value)? downloadStarted,
     TResult Function(_DownloadInProgress value)? downloadInProgress,
     TResult Function(_DownloadCompleted value)? downloadCompleted,
+    TResult Function(_DenyInstallingPermission value)? denyInstallingPermission,
+    TResult Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult Function(_OpenFile value)? openApkFile,
     TResult Function(_DownloadFailed value)? downloadFailed,
     required TResult orElse(),
   }) {
@@ -1117,7 +1410,474 @@ class _$DownloadCompletedImpl
 }
 
 abstract class _DownloadCompleted implements DownloadState {
-  const factory _DownloadCompleted() = _$DownloadCompletedImpl;
+  const factory _DownloadCompleted({required final String filePath}) =
+      _$DownloadCompletedImpl;
+
+  String get filePath;
+  @JsonKey(ignore: true)
+  _$$DownloadCompletedImplCopyWith<_$DownloadCompletedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DenyInstallingPermissionImplCopyWith<$Res> {
+  factory _$$DenyInstallingPermissionImplCopyWith(
+          _$DenyInstallingPermissionImpl value,
+          $Res Function(_$DenyInstallingPermissionImpl) then) =
+      __$$DenyInstallingPermissionImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DenyInstallingPermissionImplCopyWithImpl<$Res>
+    extends _$DownloadStateCopyWithImpl<$Res, _$DenyInstallingPermissionImpl>
+    implements _$$DenyInstallingPermissionImplCopyWith<$Res> {
+  __$$DenyInstallingPermissionImplCopyWithImpl(
+      _$DenyInstallingPermissionImpl _value,
+      $Res Function(_$DenyInstallingPermissionImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DenyInstallingPermissionImpl
+    with DiagnosticableTreeMixin
+    implements _DenyInstallingPermission {
+  const _$DenyInstallingPermissionImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'DownloadState.denyInstallingPermission()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+        DiagnosticsProperty('type', 'DownloadState.denyInstallingPermission'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DenyInstallingPermissionImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() downloadInitial,
+    required TResult Function() downloadStarted,
+    required TResult Function(double downloadPercent) downloadInProgress,
+    required TResult Function(String filePath) downloadCompleted,
+    required TResult Function() denyInstallingPermission,
+    required TResult Function() acceptedInstallingPermission,
+    required TResult Function() openApkFile,
+    required TResult Function() downloadFailed,
+  }) {
+    return denyInstallingPermission();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? downloadInitial,
+    TResult? Function()? downloadStarted,
+    TResult? Function(double downloadPercent)? downloadInProgress,
+    TResult? Function(String filePath)? downloadCompleted,
+    TResult? Function()? denyInstallingPermission,
+    TResult? Function()? acceptedInstallingPermission,
+    TResult? Function()? openApkFile,
+    TResult? Function()? downloadFailed,
+  }) {
+    return denyInstallingPermission?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? downloadInitial,
+    TResult Function()? downloadStarted,
+    TResult Function(double downloadPercent)? downloadInProgress,
+    TResult Function(String filePath)? downloadCompleted,
+    TResult Function()? denyInstallingPermission,
+    TResult Function()? acceptedInstallingPermission,
+    TResult Function()? openApkFile,
+    TResult Function()? downloadFailed,
+    required TResult orElse(),
+  }) {
+    if (denyInstallingPermission != null) {
+      return denyInstallingPermission();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DownloadInitial value) downloadInitial,
+    required TResult Function(_DownloadStarted value) downloadStarted,
+    required TResult Function(_DownloadInProgress value) downloadInProgress,
+    required TResult Function(_DownloadCompleted value) downloadCompleted,
+    required TResult Function(_DenyInstallingPermission value)
+        denyInstallingPermission,
+    required TResult Function(_AcceptedInstallingPermission value)
+        acceptedInstallingPermission,
+    required TResult Function(_OpenFile value) openApkFile,
+    required TResult Function(_DownloadFailed value) downloadFailed,
+  }) {
+    return denyInstallingPermission(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DownloadInitial value)? downloadInitial,
+    TResult? Function(_DownloadStarted value)? downloadStarted,
+    TResult? Function(_DownloadInProgress value)? downloadInProgress,
+    TResult? Function(_DownloadCompleted value)? downloadCompleted,
+    TResult? Function(_DenyInstallingPermission value)?
+        denyInstallingPermission,
+    TResult? Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult? Function(_OpenFile value)? openApkFile,
+    TResult? Function(_DownloadFailed value)? downloadFailed,
+  }) {
+    return denyInstallingPermission?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DownloadInitial value)? downloadInitial,
+    TResult Function(_DownloadStarted value)? downloadStarted,
+    TResult Function(_DownloadInProgress value)? downloadInProgress,
+    TResult Function(_DownloadCompleted value)? downloadCompleted,
+    TResult Function(_DenyInstallingPermission value)? denyInstallingPermission,
+    TResult Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult Function(_OpenFile value)? openApkFile,
+    TResult Function(_DownloadFailed value)? downloadFailed,
+    required TResult orElse(),
+  }) {
+    if (denyInstallingPermission != null) {
+      return denyInstallingPermission(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DenyInstallingPermission implements DownloadState {
+  const factory _DenyInstallingPermission() = _$DenyInstallingPermissionImpl;
+}
+
+/// @nodoc
+abstract class _$$AcceptedInstallingPermissionImplCopyWith<$Res> {
+  factory _$$AcceptedInstallingPermissionImplCopyWith(
+          _$AcceptedInstallingPermissionImpl value,
+          $Res Function(_$AcceptedInstallingPermissionImpl) then) =
+      __$$AcceptedInstallingPermissionImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AcceptedInstallingPermissionImplCopyWithImpl<$Res>
+    extends _$DownloadStateCopyWithImpl<$Res,
+        _$AcceptedInstallingPermissionImpl>
+    implements _$$AcceptedInstallingPermissionImplCopyWith<$Res> {
+  __$$AcceptedInstallingPermissionImplCopyWithImpl(
+      _$AcceptedInstallingPermissionImpl _value,
+      $Res Function(_$AcceptedInstallingPermissionImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AcceptedInstallingPermissionImpl
+    with DiagnosticableTreeMixin
+    implements _AcceptedInstallingPermission {
+  const _$AcceptedInstallingPermissionImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'DownloadState.acceptedInstallingPermission()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty(
+        'type', 'DownloadState.acceptedInstallingPermission'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AcceptedInstallingPermissionImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() downloadInitial,
+    required TResult Function() downloadStarted,
+    required TResult Function(double downloadPercent) downloadInProgress,
+    required TResult Function(String filePath) downloadCompleted,
+    required TResult Function() denyInstallingPermission,
+    required TResult Function() acceptedInstallingPermission,
+    required TResult Function() openApkFile,
+    required TResult Function() downloadFailed,
+  }) {
+    return acceptedInstallingPermission();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? downloadInitial,
+    TResult? Function()? downloadStarted,
+    TResult? Function(double downloadPercent)? downloadInProgress,
+    TResult? Function(String filePath)? downloadCompleted,
+    TResult? Function()? denyInstallingPermission,
+    TResult? Function()? acceptedInstallingPermission,
+    TResult? Function()? openApkFile,
+    TResult? Function()? downloadFailed,
+  }) {
+    return acceptedInstallingPermission?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? downloadInitial,
+    TResult Function()? downloadStarted,
+    TResult Function(double downloadPercent)? downloadInProgress,
+    TResult Function(String filePath)? downloadCompleted,
+    TResult Function()? denyInstallingPermission,
+    TResult Function()? acceptedInstallingPermission,
+    TResult Function()? openApkFile,
+    TResult Function()? downloadFailed,
+    required TResult orElse(),
+  }) {
+    if (acceptedInstallingPermission != null) {
+      return acceptedInstallingPermission();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DownloadInitial value) downloadInitial,
+    required TResult Function(_DownloadStarted value) downloadStarted,
+    required TResult Function(_DownloadInProgress value) downloadInProgress,
+    required TResult Function(_DownloadCompleted value) downloadCompleted,
+    required TResult Function(_DenyInstallingPermission value)
+        denyInstallingPermission,
+    required TResult Function(_AcceptedInstallingPermission value)
+        acceptedInstallingPermission,
+    required TResult Function(_OpenFile value) openApkFile,
+    required TResult Function(_DownloadFailed value) downloadFailed,
+  }) {
+    return acceptedInstallingPermission(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DownloadInitial value)? downloadInitial,
+    TResult? Function(_DownloadStarted value)? downloadStarted,
+    TResult? Function(_DownloadInProgress value)? downloadInProgress,
+    TResult? Function(_DownloadCompleted value)? downloadCompleted,
+    TResult? Function(_DenyInstallingPermission value)?
+        denyInstallingPermission,
+    TResult? Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult? Function(_OpenFile value)? openApkFile,
+    TResult? Function(_DownloadFailed value)? downloadFailed,
+  }) {
+    return acceptedInstallingPermission?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DownloadInitial value)? downloadInitial,
+    TResult Function(_DownloadStarted value)? downloadStarted,
+    TResult Function(_DownloadInProgress value)? downloadInProgress,
+    TResult Function(_DownloadCompleted value)? downloadCompleted,
+    TResult Function(_DenyInstallingPermission value)? denyInstallingPermission,
+    TResult Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult Function(_OpenFile value)? openApkFile,
+    TResult Function(_DownloadFailed value)? downloadFailed,
+    required TResult orElse(),
+  }) {
+    if (acceptedInstallingPermission != null) {
+      return acceptedInstallingPermission(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AcceptedInstallingPermission implements DownloadState {
+  const factory _AcceptedInstallingPermission() =
+      _$AcceptedInstallingPermissionImpl;
+}
+
+/// @nodoc
+abstract class _$$OpenFileImplCopyWith<$Res> {
+  factory _$$OpenFileImplCopyWith(
+          _$OpenFileImpl value, $Res Function(_$OpenFileImpl) then) =
+      __$$OpenFileImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OpenFileImplCopyWithImpl<$Res>
+    extends _$DownloadStateCopyWithImpl<$Res, _$OpenFileImpl>
+    implements _$$OpenFileImplCopyWith<$Res> {
+  __$$OpenFileImplCopyWithImpl(
+      _$OpenFileImpl _value, $Res Function(_$OpenFileImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OpenFileImpl with DiagnosticableTreeMixin implements _OpenFile {
+  const _$OpenFileImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'DownloadState.openApkFile()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'DownloadState.openApkFile'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OpenFileImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() downloadInitial,
+    required TResult Function() downloadStarted,
+    required TResult Function(double downloadPercent) downloadInProgress,
+    required TResult Function(String filePath) downloadCompleted,
+    required TResult Function() denyInstallingPermission,
+    required TResult Function() acceptedInstallingPermission,
+    required TResult Function() openApkFile,
+    required TResult Function() downloadFailed,
+  }) {
+    return openApkFile();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? downloadInitial,
+    TResult? Function()? downloadStarted,
+    TResult? Function(double downloadPercent)? downloadInProgress,
+    TResult? Function(String filePath)? downloadCompleted,
+    TResult? Function()? denyInstallingPermission,
+    TResult? Function()? acceptedInstallingPermission,
+    TResult? Function()? openApkFile,
+    TResult? Function()? downloadFailed,
+  }) {
+    return openApkFile?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? downloadInitial,
+    TResult Function()? downloadStarted,
+    TResult Function(double downloadPercent)? downloadInProgress,
+    TResult Function(String filePath)? downloadCompleted,
+    TResult Function()? denyInstallingPermission,
+    TResult Function()? acceptedInstallingPermission,
+    TResult Function()? openApkFile,
+    TResult Function()? downloadFailed,
+    required TResult orElse(),
+  }) {
+    if (openApkFile != null) {
+      return openApkFile();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DownloadInitial value) downloadInitial,
+    required TResult Function(_DownloadStarted value) downloadStarted,
+    required TResult Function(_DownloadInProgress value) downloadInProgress,
+    required TResult Function(_DownloadCompleted value) downloadCompleted,
+    required TResult Function(_DenyInstallingPermission value)
+        denyInstallingPermission,
+    required TResult Function(_AcceptedInstallingPermission value)
+        acceptedInstallingPermission,
+    required TResult Function(_OpenFile value) openApkFile,
+    required TResult Function(_DownloadFailed value) downloadFailed,
+  }) {
+    return openApkFile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DownloadInitial value)? downloadInitial,
+    TResult? Function(_DownloadStarted value)? downloadStarted,
+    TResult? Function(_DownloadInProgress value)? downloadInProgress,
+    TResult? Function(_DownloadCompleted value)? downloadCompleted,
+    TResult? Function(_DenyInstallingPermission value)?
+        denyInstallingPermission,
+    TResult? Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult? Function(_OpenFile value)? openApkFile,
+    TResult? Function(_DownloadFailed value)? downloadFailed,
+  }) {
+    return openApkFile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DownloadInitial value)? downloadInitial,
+    TResult Function(_DownloadStarted value)? downloadStarted,
+    TResult Function(_DownloadInProgress value)? downloadInProgress,
+    TResult Function(_DownloadCompleted value)? downloadCompleted,
+    TResult Function(_DenyInstallingPermission value)? denyInstallingPermission,
+    TResult Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult Function(_OpenFile value)? openApkFile,
+    TResult Function(_DownloadFailed value)? downloadFailed,
+    required TResult orElse(),
+  }) {
+    if (openApkFile != null) {
+      return openApkFile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OpenFile implements DownloadState {
+  const factory _OpenFile() = _$OpenFileImpl;
 }
 
 /// @nodoc
@@ -1167,9 +1927,12 @@ class _$DownloadFailedImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() downloadInitial,
-    required TResult Function(String url) downloadStarted,
+    required TResult Function() downloadStarted,
     required TResult Function(double downloadPercent) downloadInProgress,
-    required TResult Function() downloadCompleted,
+    required TResult Function(String filePath) downloadCompleted,
+    required TResult Function() denyInstallingPermission,
+    required TResult Function() acceptedInstallingPermission,
+    required TResult Function() openApkFile,
     required TResult Function() downloadFailed,
   }) {
     return downloadFailed();
@@ -1179,9 +1942,12 @@ class _$DownloadFailedImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? downloadInitial,
-    TResult? Function(String url)? downloadStarted,
+    TResult? Function()? downloadStarted,
     TResult? Function(double downloadPercent)? downloadInProgress,
-    TResult? Function()? downloadCompleted,
+    TResult? Function(String filePath)? downloadCompleted,
+    TResult? Function()? denyInstallingPermission,
+    TResult? Function()? acceptedInstallingPermission,
+    TResult? Function()? openApkFile,
     TResult? Function()? downloadFailed,
   }) {
     return downloadFailed?.call();
@@ -1191,9 +1957,12 @@ class _$DownloadFailedImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? downloadInitial,
-    TResult Function(String url)? downloadStarted,
+    TResult Function()? downloadStarted,
     TResult Function(double downloadPercent)? downloadInProgress,
-    TResult Function()? downloadCompleted,
+    TResult Function(String filePath)? downloadCompleted,
+    TResult Function()? denyInstallingPermission,
+    TResult Function()? acceptedInstallingPermission,
+    TResult Function()? openApkFile,
     TResult Function()? downloadFailed,
     required TResult orElse(),
   }) {
@@ -1210,6 +1979,11 @@ class _$DownloadFailedImpl
     required TResult Function(_DownloadStarted value) downloadStarted,
     required TResult Function(_DownloadInProgress value) downloadInProgress,
     required TResult Function(_DownloadCompleted value) downloadCompleted,
+    required TResult Function(_DenyInstallingPermission value)
+        denyInstallingPermission,
+    required TResult Function(_AcceptedInstallingPermission value)
+        acceptedInstallingPermission,
+    required TResult Function(_OpenFile value) openApkFile,
     required TResult Function(_DownloadFailed value) downloadFailed,
   }) {
     return downloadFailed(this);
@@ -1222,6 +1996,11 @@ class _$DownloadFailedImpl
     TResult? Function(_DownloadStarted value)? downloadStarted,
     TResult? Function(_DownloadInProgress value)? downloadInProgress,
     TResult? Function(_DownloadCompleted value)? downloadCompleted,
+    TResult? Function(_DenyInstallingPermission value)?
+        denyInstallingPermission,
+    TResult? Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult? Function(_OpenFile value)? openApkFile,
     TResult? Function(_DownloadFailed value)? downloadFailed,
   }) {
     return downloadFailed?.call(this);
@@ -1234,6 +2013,10 @@ class _$DownloadFailedImpl
     TResult Function(_DownloadStarted value)? downloadStarted,
     TResult Function(_DownloadInProgress value)? downloadInProgress,
     TResult Function(_DownloadCompleted value)? downloadCompleted,
+    TResult Function(_DenyInstallingPermission value)? denyInstallingPermission,
+    TResult Function(_AcceptedInstallingPermission value)?
+        acceptedInstallingPermission,
+    TResult Function(_OpenFile value)? openApkFile,
     TResult Function(_DownloadFailed value)? downloadFailed,
     required TResult orElse(),
   }) {
